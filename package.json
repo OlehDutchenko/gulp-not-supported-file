@@ -1,0 +1,19 @@
+{
+  "name": "gulp-not-supported-file",
+  "version": "0.0.1",
+  "description": "Check the file before process it in your Gulp plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dutchenkoOleg/gulp-not-supported-file.git"
+  },
+  "author": "Oleg Dutchenko <dutchenko.o.dev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dutchenkoOleg/gulp-not-supported-file/issues"
+  },
+  "homepage": "https://github.com/dutchenkoOleg/gulp-not-supported-file#readme"
+}
