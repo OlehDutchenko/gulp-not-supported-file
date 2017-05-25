@@ -22,7 +22,10 @@ are welcome:
 [![happiness][happiness-image]][happiness-url]
 
 This repository uses [`happiness`][happiness-url] to maintain code style and consistency,
-and to avoid style arguments. So you also need to follow this  code style!
+and to avoid style arguments.  
+ ***So you also need to follow this  code style!*** 
+
+You can use `happiness` or `npm test` commands for check out your code. Also you use `happines --fix` or `npm run happiness-fix` for automatically fix problems.
 
 [happiness-image]: https://cdn.rawgit.com/JedWatson/happiness/master/badge.svg
 [happiness-url]: https://github.com/JedWatson/happiness
