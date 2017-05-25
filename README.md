@@ -1,8 +1,8 @@
 # gulp-not-supported-file
 
-![work in progress](https://img.shields.io/badge/Status-WIP-red.svg)
+![npm](https://img.shields.io/badge/node-6.3.1-yellow.svg)
+![es2015](https://img.shields.io/badge/ECMAScript-2015_(ES6)-blue.svg)
 ![license](https://img.shields.io/badge/License-MIT-blue.svg)
-[![changelog](https://img.shields.io/badge/CHANGELOG-md-blue.svg)](./CHANGELOG.md)
 
 > _Not a Gulp plugin,_  
 > _but for Gulp plugin developers._  
