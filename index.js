@@ -35,6 +35,7 @@ function withFilePath (file, msg) {
 	if (file && file.path) {
 		msg += `\n    ${file.path}`;
 	}
+	
 	return msg;
 }
 
