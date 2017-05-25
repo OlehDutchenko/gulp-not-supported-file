@@ -13,6 +13,7 @@
 
 const gulp = require('gulp');
 const mocha = require('gulp-mocha');
+const should = require('should');
 
 // ----------------------------------------
 // Exports
@@ -23,7 +24,7 @@ gulp.task('test', function () {
 		.pipe(mocha({
 			reporter: 'spec',
 			globals: {
-				should: require('should')
+				should
 			}
 		}));
 });

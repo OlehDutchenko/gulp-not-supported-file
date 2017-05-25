@@ -6,21 +6,35 @@
  * @author Oleg Dutchenko <dutchenko.o.dev@gmail.com>
  */
 
-const gutil = require('gulp-util');
+// ----------------------------------------
+// Imports
+// ----------------------------------------
+
 const fs = require('fs');
+const gutil = require('gulp-util');
 const notSupportedFile = require('../index');
 const should = require('should');
-const _isArray = require('lodash.isarray');
+
+// ----------------------------------------
+// Helpers
+// ----------------------------------------
 
 function pluginError (sample, options) {
 	return new gutil.PluginError('test-plugin', sample, options);
 }
+
+const _isArray = Array.isArray;
 
 const file1 = './test/fixtures/supported-file.js';
 const file2 = './test/fixtures/supported-file.scss';
 const file3 = './test/fixtures/empty-file.css';
 const file4 = './test/fixtures/_underscore.scss';
 const directory1 = './test/fixtures/';
+const directory2 = './test/fixtures';
+
+// ----------------------------------------
+// Tests
+// ----------------------------------------
 
 // eslint-disable-next-line
 describe('passing all sources', function () {
@@ -153,6 +167,27 @@ describe('passing all sources', function () {
 		let failedStatus = notSupported.shift();
 
 		should.equal('isNull', failedStatus);
+		should.equal('object', typeof notSupported[0]);
+	});
+
+	// eslint-disable-next-line
+	it(`should not pass ${directory2}`, function () {
+		let file = new gutil.File({
+			cwd: __dirname,
+			path: directory2
+		});
+
+		file.isDirectory = function () {
+			return true;
+		};
+
+		let notSupported = notSupportedFile(file, pluginError, {});
+
+		should.equal(true, _isArray(notSupported));
+
+		let failedStatus = notSupported.shift();
+
+		should.equal('isDirectory', failedStatus);
 		should.equal('object', typeof notSupported[0]);
 	});
 });

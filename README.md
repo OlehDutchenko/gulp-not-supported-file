@@ -165,7 +165,7 @@ Please read [CHANGELOG.md](https://github.com/dutchenkoOleg/gulp-not-supported-f
 
 ## Tests
 
-1. `npm test` for testing code style
+1. `npm test` for testing code style and run mocha tests
 1. `npm run happiness-fix` for automatically fix problems 
 
 ## Contributing
