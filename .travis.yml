@@ -3,3 +3,6 @@ language: node_js
 node_js:
   - "7"
   - "6"
+before_script:
+  - npm install -g gulpjs/gulp#4.0
+script: gulp
