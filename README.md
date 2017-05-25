@@ -147,9 +147,17 @@ _No console logs if set `true`_
 
 ---
 
+## Installing
+
+```shell
+npm install --save gulp-not-supported-file
+# or using yarn cli
+yarn add gulp-not-supported-file
+```
+
 ## Changelog
 
-read [CHANGELOG.md](./CHANGELOG.md)
+read [CHANGELOG.md](https://github.com/dutchenkoOleg/gulp-not-supported-file/blob/master/CHANGELOG.md)
 
 ## Tests
 
