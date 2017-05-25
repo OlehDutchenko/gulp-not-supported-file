@@ -1,5 +1,6 @@
 # gulp-not-supported-file
 
+[![Build Status](https://travis-ci.org/dutchenkoOleg/gulp-not-supported-file.svg?branch=master)](https://travis-ci.org/dutchenkoOleg/gulp-not-supported-file)
 ![npm](https://img.shields.io/badge/node-6.3.1-yellow.svg)
 ![es2015](https://img.shields.io/badge/ECMAScript-2015_(ES6)-blue.svg)
 ![license](https://img.shields.io/badge/License-MIT-blue.svg)
