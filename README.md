@@ -92,7 +92,7 @@ function myGulpPlugin(options) {
 			// - 'isNull' -> will be error
 			// - 'isStream' -> will be error
 			// - 'isEmpty' -> skip file
-			// - 'isUndercored' -> skip file
+			// - 'isUndercore' -> skip file
 			let failStatus = notSupported.shift();
 			
 			// es6 spread
@@ -125,7 +125,8 @@ let notSupported = notSupportedFile(file, pluginError, options);
 type `boolean` /
 default `true`
 
-_File with empty content will be skipped_
+_File with empty content will be skipped_  
+_return `'isEmpty'` on fail_
 
 
 #### `noUnderscore`
@@ -133,7 +134,8 @@ _File with empty content will be skipped_
 type `boolean` /
 default `true`
 
-_File starting with `_` will be skipped_
+_File starting with `_` will be skipped_  
+_return `'isUnderscore'` on fail_
 
 
 #### `silent`
