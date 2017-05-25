@@ -8,6 +8,8 @@
 > _but for Gulp plugin developers._  
 > _Check the file before process it in your Gulp plugin_
 
+[![js-happiness-style](https://cdn.rawgit.com/JedWatson/happiness/master/badge.svg)](https://github.com/JedWatson/happiness)
+
 ## What is this and why it was created?
 
 Most of Gulp plugins for compiling/rendering static files use [through2](https://www.npmjs.com/package/through2) for processing. And first step of each code is a testing file  
@@ -126,6 +128,7 @@ type `boolean` /
 default `true`
 
 _File with empty content will be skipped_  
+_**Note!** Spaces, tabs and newlines will be treated as empty content._  
 _return `['isEmpty']` on fail_
 
 
@@ -157,13 +160,13 @@ yarn add gulp-not-supported-file
 
 ## Changelog
 
-read [CHANGELOG.md](https://github.com/dutchenkoOleg/gulp-not-supported-file/blob/master/CHANGELOG.md)
+Please read [CHANGELOG.md](https://github.com/dutchenkoOleg/gulp-not-supported-file/blob/master/CHANGELOG.md)
 
 ## Tests
 
-Sorry but here no tests yet
-
+1. `npm test` for testing code style
+1. `npm run happiness-fix` for automatically fix problems 
 
 ## Contributing
 
-You're welcome - [issues](https://github.com/dutchenkoOleg/gulp-not-supported-file/issues) and [pulls](https://github.com/dutchenkoOleg/gulp-not-supported-file/pulls)
+Please read [CONTRIBUTING.md](https://github.com/dutchenkoOleg/gulp-not-supported-file/blob/master/CONTRIBUTING.md)
