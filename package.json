@@ -1,6 +1,6 @@
 {
   "name": "gulp-not-supported-file",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Check the file before process it in your Gulp plugin",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,17 @@
   "bugs": {
     "url": "https://github.com/dutchenkoOleg/gulp-not-supported-file/issues"
   },
-  "homepage": "https://github.com/dutchenkoOleg/gulp-not-supported-file#readme"
+  "homepage": "https://github.com/dutchenkoOleg/gulp-not-supported-file#readme",
+  "keywords": [
+    "gulp",
+    "plugin",
+    "file",
+    "develop",
+    "through2",
+    "stream",
+    "buffer"
+  ],
+  "dependencies": {
+    "chalk": "^1.1.3"
+  }
 }

@@ -10,7 +10,7 @@
 
 ## What is this and why it was created?
 
-Most of Gulp plugins use [through2](https://www.npmjs.com/package/through2) for processing files. And first step of each code is a testing file  
+Most of Gulp plugins for compiling/rendering static files use [through2](https://www.npmjs.com/package/through2) for processing. And first step of each code is a testing file  
 \- it is not null  
 \- it is not stream  
 \- it is not ...  
@@ -24,7 +24,7 @@ function myGulpPLugin(options) {
 	// ...
 	
 	// processing
-	return through.obj(function(file, enc, cb) {
+	return through2.obj(function(file, enc, cb) {
 		if (file.isNull()) {
 			return cb(null, file);
 		}
@@ -48,6 +48,8 @@ function myGulpPLugin(options) {
 > _I'm tired of writing the same code every time._  
 > _So I wrote it once and wrapped it in a tiny module._
 
+---
+
 ## How it works
 
 Call this module with your file and with your plugin error handler. Module will return result:
@@ -59,7 +61,7 @@ Call this module with your file and with your plugin error handler. Module will 
 
 ```js
 const gutil = require('gulp-util');
-const through = require('through2');
+const through2 = require('through2');
 const notSupportedFile = require('gulp-not-supported-file');
 
 // for check data type
@@ -81,10 +83,18 @@ function myGulpPlugin(options) {
 	}
 	
 	// processing
-	return through.obj(function (file, enc, cb) {
+	return through2.obj(function (file, enc, cb) {
 		let notSupported = notSupportedFile(file, pluginError);
 		
 		if (_isArray(notSupported)) {
+			// name of failed test
+			// - 'isDirectory' -> will be error
+			// - 'isNull' -> will be error
+			// - 'isStream' -> will be error
+			// - 'isEmpty' -> skip file
+			// - 'isUndercored' -> skip file
+			let failStatus = notSupported.shift();
+			
 			// es6 spread
 			return cb(...notSupported);
 			
@@ -100,3 +110,50 @@ function myGulpPlugin(options) {
 module.exports = myGulpPlugin;
 
 ```
+
+### Module also has few options
+
+Options are passed by the third argument and must an `object`
+
+```js
+let notSupported = notSupportedFile(file, pluginError, options);
+```
+
+
+#### `noEmpty`
+
+type `boolean` /
+default `true`
+
+_File with empty content will be skipped_
+
+
+#### `noUnderscore`
+
+type `boolean` /
+default `true`
+
+_File starting with `_` will be skipped_
+
+
+#### `silent`
+
+type `boolean` /
+default `false`
+
+_No console logs if set `true`_
+
+---
+
+## Changelog
+
+read [CHANGELOG.md](./CHANGELOG.md)
+
+## Tests
+
+Sorry but here no tests yet
+
+
+## Contributing
+
+You're welcome - [issues](https://github.com/dutchenkoOleg/gulp-not-supported-file/issues) and [pulls](https://github.com/dutchenkoOleg/gulp-not-supported-file/pulls)
