@@ -58,7 +58,15 @@ function myGulpPLugin(options) {
 Call this module with your file and with your plugin error handler. Module will return result:
 
 - `false` if the file is suitable for work
-- `Array` if the file failed the test. Array will contain arguments for `through2` callback.
+- `Array` if the file failed the test. Array will contain arguments. First of them is text status name of fail and next arguments for `through2` callback.
+
+***Status list***
+
+- `'isDirectory'` - will be error
+- `'isNull'` - will be error
+- `'isStream'` - will be error
+- `'isEmpty'` - skip file
+- `'isUnderscore'` - skip file
 
 ***Usage example***
 
@@ -66,9 +74,6 @@ Call this module with your file and with your plugin error handler. Module will 
 const gutil = require('gulp-util');
 const through2 = require('through2');
 const notSupportedFile = require('gulp-not-supported-file');
-
-// for check data type
-const _isArray = require('lodash.isarray');
 
 // my awesome plugin name
 const pluginName = 'my-gulp-plugin';
@@ -89,20 +94,9 @@ function myGulpPlugin(options) {
 	return through2.obj(function (file, enc, cb) {
 		let notSupported = notSupportedFile(file, pluginError);
 		
-		if (_isArray(notSupported)) {
-			// name of failed test
-			// - 'isDirectory' -> will be error
-			// - 'isNull' -> will be error
-			// - 'isStream' -> will be error
-			// - 'isEmpty' -> skip file
-			// - 'isUndercore' -> skip file
-			let failStatus = notSupported.shift();
-			
-			// es6 spread
-			return cb(...notSupported);
-			
-			// or es5 apply
-			return cb.apply(null, notSupported);
+		if (Array.isArray(notSupported)) {
+			notSupported.shift();       // or with saving -> let failStatus = notSupported.shift();
+			return cb(...notSupported); // or es5 apply -> cb.apply(null, notSupported);
 		}
 		
 		// work with file if passed

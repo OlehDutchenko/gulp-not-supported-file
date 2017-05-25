@@ -1,9 +1,7 @@
 'use strict';
 
 /**
- * Testing with `gulp-mocha` and `chai`
- * @module
- *
+ * @fileOverview Testing with `gulp-mocha` and `chai`
  * @author Oleg Dutchenko <dutchenko.o.wezom@gmail.com>
  */
 
