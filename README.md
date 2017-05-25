@@ -126,7 +126,7 @@ type `boolean` /
 default `true`
 
 _File with empty content will be skipped_  
-_return `'isEmpty'` on fail_
+_return `['isEmpty']` on fail_
 
 
 #### `noUnderscore`
@@ -135,7 +135,7 @@ type `boolean` /
 default `true`
 
 _File starting with `_` will be skipped_  
-_return `'isUnderscore'` on fail_
+_return `['isUnderscore']` on fail_
 
 
 #### `silent`
