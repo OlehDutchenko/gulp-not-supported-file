@@ -86,8 +86,8 @@ function myGulpPlugin(options) {
 	// ...
 	
 	// private method plugin error
-	function pluginError (data, options) {
-		return new gutil.PluginError(pluginName, data, options);
+	function pluginError (data, errorOptions) {
+		return new gutil.PluginError(pluginName, data, errorOptions);
 	}
 	
 	// processing
@@ -110,7 +110,7 @@ module.exports = myGulpPlugin;
 
 ### Module also has few options
 
-Options are passed by the third argument and must an `object`
+Options are passed by the third argument and must be an `object`
 
 ```js
 let notSupported = notSupportedFile(file, pluginError, options);
@@ -153,14 +153,14 @@ npm install --save gulp-not-supported-file
 yarn add gulp-not-supported-file
 ```
 
-## Changelog
-
-Please read [CHANGELOG.md](https://github.com/dutchenkoOleg/gulp-not-supported-file/blob/master/CHANGELOG.md)
-
 ## Tests
 
 1. `npm test` for testing code style and run mocha tests
 1. `npm run happiness-fix` for automatically fix problems 
+
+## Changelog
+
+Please read [CHANGELOG.md](https://github.com/dutchenkoOleg/gulp-not-supported-file/blob/master/CHANGELOG.md)
 
 ## Contributing
 
