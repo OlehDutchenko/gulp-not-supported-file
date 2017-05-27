@@ -1,8 +1,8 @@
 'use strict';
 
 /**
- * @fileOverview Testing with `gulp-mocha` and `chai`
- * @author Oleg Dutchenko <dutchenko.o.wezom@gmail.com>
+ * @fileOverview Testing with `gulp-mocha`
+ * @author Oleg Dutchenko <dutchenko.o.dev@gmail.com>
  */
 
 // ----------------------------------------

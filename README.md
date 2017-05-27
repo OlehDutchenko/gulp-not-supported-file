@@ -117,31 +117,40 @@ let notSupported = notSupportedFile(file, pluginError, options);
 ```
 
 
-#### `noEmpty`
-
-type `boolean` /
-default `true`
-
-_File with empty content will be skipped_  
-_**Note!** Spaces, tabs and newlines will be treated as empty content._  
-_return `['isEmpty']` on fail_
-
 
 #### `noUnderscore`
 
 type `boolean` /
 default `true`
 
-_File starting with `_` will be skipped_  
-_return `['isUnderscore']` on fail_
+File with empty content will be skipped and not using in stream next.  
 
+_You will receive message in console if it happens_  
+_Example of log:_
+
+![no-empty log example](https://raw.githubusercontent.com/dutchenkoOleg/gulp-not-supported-file/master/assets/no-underscore.png)
+
+
+#### `noEmpty`
+
+type `boolean` /
+default `true`
+
+File with empty content will be skipped and not using in stream next.  
+Return `['isEmpty']`  
+_**Note!** Spaces, tabs and newlines will be treated as empty content._  
+ 
+_You will receive message in console if it happens_stream next._  
+_Example of log:_
+
+![no-empty log example](https://raw.githubusercontent.com/dutchenkoOleg/gulp-not-supported-file/master/assets/no-empty.png)
 
 #### `silent`
 
 type `boolean` /
 default `false`
 
-_No console logs if set `true`_
+No logs about `noEmpty` and `noUnderscore` files
 
 ---
 
@@ -156,7 +165,7 @@ yarn add gulp-not-supported-file
 ## Tests
 
 1. `npm test` for testing code style and run mocha tests
-1. `npm run happiness-fix` for automatically fix problems 
+1. `npm run happiness-fix` for automatically fix most of problems with code style 
 
 ## Changelog
 

@@ -88,28 +88,28 @@ module.exports = function notSupportedFile (file, pluginError, options = {}) {
 		)];
 	}
 
+	if (noUnderscore) {
+		let hasUnderscore = path.basename(file.path).indexOf('_') === 0;
+
+		if (hasUnderscore) {
+			if (silent !== true) {
+				console.log(chalk.yellow('Warning! Filename starts with \'_\' (underscore), skipped'));
+				console.log(chalk.magenta(file.path));
+			}
+			return ['isUnderscore'];
+		}
+	}
+
 	if (noEmpty) {
 		let fileContent = String(file.contents);
 
 		fileContent = fileContent.replace(/\s|\t|\n|\r/g, '');
 		if (!fileContent.length) {
 			if (silent !== true) {
-				console.log(chalk.yellow('Warning! File with empty content, skipped'));
+				console.log(chalk.yellow('Warning! Filename with empty content, skipped'));
 				console.log(chalk.magenta(file.path));
 			}
 			return ['isEmpty'];
-		}
-	}
-
-	if (noUnderscore) {
-		let hasUnderscore = path.basename(file.path).indexOf('_') === 0;
-
-		if (hasUnderscore) {
-			if (silent !== true) {
-				console.log(chalk.yellow('Warning! File starting with \'_\', skipped'));
-				console.log(chalk.magenta(file.path));
-			}
-			return ['isUnderscore'];
 		}
 	}
 
