@@ -107,7 +107,7 @@ function myGulpPlugin(options) {
 	});
 }
 
-module.exports = PLUGIN_NAME;
+module.exports = myGulpPlugin;
 
 ```
 
