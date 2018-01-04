@@ -4,6 +4,7 @@
  * Check the file before process it in your Gulp plugin
  * @module gulp-not-supported-file
  * @author Oleg Dutchenko <dutchenko.o.dev@gmail.com>
+ * @version 1.2.3
  */
 
 // ----------------------------------------

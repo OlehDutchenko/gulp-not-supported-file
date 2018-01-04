@@ -3,6 +3,7 @@
 /**
  * @fileOverview Testing with `gulp-mocha`
  * @author Oleg Dutchenko <dutchenko.o.dev@gmail.com>
+ * @version 1.2.0
  */
 
 // ----------------------------------------

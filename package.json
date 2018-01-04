@@ -1,6 +1,6 @@
 {
   "name": "gulp-not-supported-file",
-  "version": "1.2.1",
+  "version": "1.2.3",
   "description": "Check the file before process it in your Gulp plugin",
   "main": "index.js",
   "scripts": {
@@ -30,11 +30,12 @@
     "chalk": "^2.3.0"
   },
   "devDependencies": {
-    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp": "^4.0.0",
     "gulp-mocha": "^4.3.1",
-    "gulp-util": "^3.0.8",
     "happiness": "^10.0.2",
+    "plugin-error": "^0.1.2",
     "should": "^11.2.1",
-    "snazzy": "^7.0.0"
+    "snazzy": "^7.0.0",
+    "vinyl": "^2.1.0"
   }
 }
