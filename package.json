@@ -1,6 +1,6 @@
 {
   "name": "gulp-not-supported-file",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Check the file before process it in your Gulp plugin",
   "main": "index.js",
   "scripts": {

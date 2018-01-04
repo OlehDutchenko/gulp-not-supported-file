@@ -22,6 +22,10 @@ And after this checkouts we may work with file.
 _Little example_
 
 ```js
+const through2 = require('through2');
+const PluginError = require('plugin-error');
+const PLUGIN_NAME = 'my-plugin';
+
 function myGulpPLugin(options) {
 	// process options if need
 	// ...
@@ -33,7 +37,7 @@ function myGulpPLugin(options) {
 		}
 		
 		if (file.isStream()) {
-			return cb(new gutil.PluginError(PLUGIN_NAME, 'Streaming not supported'));
+			return cb(new PluginError(PLUGIN_NAME, 'Streaming not supported'));
 		}
 		
 		if (!file.contents.length) {
@@ -71,24 +75,23 @@ Call this module with your file and with your plugin error handler. Module will 
 ***Usage example***
 
 ```js
-const gutil = require('gulp-util');
 const through2 = require('through2');
+const PluginError = require('plugin-error');
+const PLUGIN_NAME = 'my-plugin';
+
 const notSupportedFile = require('gulp-not-supported-file');
 
-// my awesome plugin name
-const pluginName = 'my-gulp-plugin';
-
 // ---------------------------
+	
+// private method plugin error
+function pluginError (data, errorOptions) {
+	return new PluginError(PLUGIN_NAME, data, errorOptions);
+}
 
 // core plugin method
 function myGulpPlugin(options) {
 	// process options if need
 	// ...
-	
-	// private method plugin error
-	function pluginError (data, errorOptions) {
-		return new gutil.PluginError(pluginName, data, errorOptions);
-	}
 	
 	// processing
 	return through2.obj(function (file, enc, cb) {
@@ -104,7 +107,7 @@ function myGulpPlugin(options) {
 	});
 }
 
-module.exports = myGulpPlugin;
+module.exports = PLUGIN_NAME;
 
 ```
 
